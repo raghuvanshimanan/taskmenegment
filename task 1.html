@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accordion Menu</title>
+<style>
+  body { 
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .accordion {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: purple;
+    border-radius: 20px;
+  }
+
+  .accordion-header {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .accordion-header::after {
+    content: '\25B6'; /* Unicode character for right-pointing arrow (▶) */
+    font-size: 13px;
+    float: right;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item[open] .accordion-header::after {
+    content: '\25BC'; /* Unicode character for down-pointing arrow (▼) */
+    transform: rotate(90deg);
+  }
+
+  .accordion-content {
+    padding: 0 20px;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    max-height: 0;
+    background-color: #ddd;
+  }
+
+  .accordion-item[open] .accordion-content {
+    max-height: 2000px; /* Set a maximum height for the content */
+    transition: max-height 0.4s ease-in;
+  }
+</style>
+</head>
+<body>
+
+<div class="accordion">
+  <details class="accordion-item" open>
+    <summary class="accordion-header">Section #1</summary>
+    <div class="accordion-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, earum, magnam? Alias error, placeat! Accusamus accusantium alias eum iure laborum odit porro quaerat? Animi enim id labore officiis quam sint.</p>
+    </div>
+  </details>
+  <details class="accordion-item">
+    <summary class="accordion-header">Section #2</summary>
+    <div class="accordion-content">
+      <p>Content for section 2 goes here.</p>
+    </div>
+  </details>
+  <details class="accordion-item">
+    <summary class="accordion-header">Section #3</summary>
+    <div class="accordion-content">
+      <p>Content for section 3 goes here.</p>
+    </div>
+  </details>
+</div>
+
+</body>
+</html>
